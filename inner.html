@@ -30,6 +30,7 @@
       background-color:#ece698aa;
       padding: 20px;
       border-radius: 10px;
+      box-shadow: 0px 0px 20px rgba(128, 128, 128, 0.608);
     }
 
     p {
@@ -46,7 +47,7 @@
       background-color: #ece698aa;
       padding: 20px;
       border-radius: 10px;
-
+      box-shadow: 0px 0px 20px rgba(128, 128, 128, 0.608);
     }
     h1{
       font-size: 4rem;
@@ -61,6 +62,7 @@
       padding: 10px;
       border-radius: 5px;
       box-sizing: border-box;
+      border-color: gold;
     }
     button{
       padding: 10px 20px ;
@@ -72,9 +74,14 @@
         grid-template-columns: 1fr;
       }
       .display {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
       }
-      
+      .display div{
+        width: 100%;
+        box-sizing: border-box;
+      }
       body {
         padding: 20px 20px;
       }
@@ -94,15 +101,15 @@
   <h1>Sonali Bank limited</h1>
   <div class="display">
     <div>
-      <h2>Deposit</h2>
+      <h2>Total Deposit</h2>
       <p style="color: rgba(0, 128, 0, 0.366);">$<span id="diposit-display">00</span></p>
     </div>
     <div>
-      <h2> Withdraw</h2>
+      <h2>Total Withdraw</h2>
       <p style="color: rgba(255, 0, 0, 0.378);">$<span id="withdrow-display">00</span></p>
     </div>
     <div>
-      <h2>Balance</h2>
+      <h2>Current Balance</h2>
       <p style="color: rgba(0, 128, 0, 0.366);">$<span id="total-balance">100</span></p>
     </div>
   </div>
