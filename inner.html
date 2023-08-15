@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+    *{
+      padding: 0%;
+      margin: 0%;
+    }
+    h1 {
+      text-align: center;
+      color: rgba(137, 43, 226, 0.556);
+    }
+
+    body {
+      background-color: rgba(245, 245, 220, 0.824);
+      padding: 50px 200px;
+    }
+
+    .display {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 50px;
+    }
+
+    .display > div {
+      background-color:#ece698aa;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    p {
+      font-size: 3rem;
+      margin: 0%;
+    }
+    .main{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      margin-top: 40px;
+    }
+    .main > div{
+      background-color: #ece698aa;
+      padding: 20px;
+      border-radius: 10px;
+
+    }
+    h1{
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+    h2{
+      font-size: 2rem;
+      font-weight: 400;
+    }
+    input{
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    button{
+      padding: 10px 20px ;
+      border-radius: 10px;
+      border: none;
+    }
+    @media (max-width:1024px) {
+      .main{
+        grid-template-columns: 1fr;
+      }
+      .display {
+        grid-template-columns: 1fr;
+      }
+      
+      body {
+        padding: 20px 20px;
+      }
+      h1{
+        font-size: 2rem;
+      }
+      h2{
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Sonali Bank limited</h1>
+  <div class="display">
+    <div>
+      <h2>Deposit</h2>
+      <p style="color: rgba(0, 128, 0, 0.366);">$<span id="diposit-display">00</span></p>
+    </div>
+    <div>
+      <h2> Withdraw</h2>
+      <p style="color: rgba(255, 0, 0, 0.378);">$<span id="withdrow-display">00</span></p>
+    </div>
+    <div>
+      <h2>Balance</h2>
+      <p style="color: rgba(0, 128, 0, 0.366);">$<span id="total-balance">100</span></p>
+    </div>
+  </div>
+  <div class="main">
+    <div>
+      <h2>Diposit ammount</h2>
+      <input id="diposit-input" type="text" name="" placeholder=" $ input diposit ammount">
+      <br><br>
+      <button id="diposit-btn" style="background:  rgba(0, 128, 0, 0.366);">Diposit</button>
+    </div>
+    <div>
+      <h2>Withdraw ammount</h2>
+      <input type="text" name="" id="withdrow-input"  placeholder=" & Input withdraw ammount">
+      <br><br>
+      <button id="withdraw-btn" style="background: rgba(255, 0, 0, 0.378);">Withdraw</button>
+  </div>
+  <script>
+    // ======== deposit related javaScript 
+    document.getElementById('diposit-btn').addEventListener('click', function(){
+      // diposit display 
+      let dipositDisplay = document.getElementById('diposit-display');
+      let dipositDisplayAmmount = parseFloat(dipositDisplay.innerText);
+      // disposit input 
+      let diposiInput = document.getElementById('diposit-input');
+      let dipositInputAmmount = parseFloat(diposiInput.value);
+      // total balane 
+      let totalBanlaneDisplay = document.getElementById('total-balance');
+      let totalBalanceConvet = parseFloat(totalBanlaneDisplay.innerText);
+      // diposit mathmatical operation 
+      let diposit = dipositDisplayAmmount + dipositInputAmmount;
+      dipositDisplay.innerText = diposit;
+      // total ammount mathmatic operation 
+      let totalBalance = totalBalanceConvet + dipositInputAmmount;
+      totalBanlaneDisplay.innerText = totalBalance;
+      // reset diposit input feild 
+      diposiInput.value = ''
+    })
+    // =============withdrow related javaScript ============
+    document.getElementById('withdraw-btn').addEventListener('click', function (){
+      // withdrow display
+      let withdrawDisplay = document.getElementById('withdrow-display');
+      let withdrawDisplayAmmount = parseFloat(withdrawDisplay.innerText)
+      // withdrow input 
+      let withdrawInput = document.getElementById('withdrow-input');
+      let withdrawInputAmmount = parseFloat(withdrawInput.value)
+      // math 
+      let totalWithdrow = withdrawDisplayAmmount + withdrawInputAmmount;
+      withdrawDisplay.innerText = totalWithdrow;
+      // total balance
+      let total = document.getElementById('total-balance');
+      let totalNumber = parseFloat(total.innerText);
+      let minus = totalNumber - withdrawInputAmmount;
+      total.innerText = minus;
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+    #from-container{
+      background: gray;
+      width: 80vw;
+      margin: auto;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    body{
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    input{
+      width:80%;
+      padding:5px;
+    }
+    button{
+      padding: 10px 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="from-container">
+    <h1>Log in your aceount</h1>
+    <input type="email" placeholder="Email" id="mail" />
+    <br><br>
+    <input type="password" id="password" placeholder="Password" />
+    <br> <br>
+    <button id="login">log in</button>
+  </div>
+  <script>
+    document.getElementById('login').addEventListener('click', function(){
+      let mail = document.getElementById('mail');
+      let email = mail.value;
+      //console.log(email)
+      let pass = document.getElementById('password');
+      let password = parseInt(pass.value);
+      //console.log(password)
+      if (email === 'mehedi@gmail.com' && password === 55510) {
+        window.location.href = ' inner.html ' 
+      }else{
+        alert("Please try again")
+      }
+    })
+  </script>
+</body>
+
+</html>
