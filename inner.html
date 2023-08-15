@@ -122,40 +122,60 @@
   <script>
     // ======== deposit related javaScript 
     document.getElementById('diposit-btn').addEventListener('click', function(){
-      // diposit display 
-      let dipositDisplay = document.getElementById('diposit-display');
-      let dipositDisplayAmmount = parseFloat(dipositDisplay.innerText);
-      // disposit input 
-      let diposiInput = document.getElementById('diposit-input');
-      let dipositInputAmmount = parseFloat(diposiInput.value);
-      // total balane 
-      let totalBanlaneDisplay = document.getElementById('total-balance');
-      let totalBalanceConvet = parseFloat(totalBanlaneDisplay.innerText);
-      // diposit mathmatical operation 
-      let diposit = dipositDisplayAmmount + dipositInputAmmount;
-      dipositDisplay.innerText = diposit;
-      // total ammount mathmatic operation 
-      let totalBalance = totalBalanceConvet + dipositInputAmmount;
-      totalBanlaneDisplay.innerText = totalBalance;
-      // reset diposit input feild 
-      diposiInput.value = ''
+      let forAlrtDeposit = document.getElementById('diposit-input');
+      if (forAlrtDeposit.value === '') {
+        alert('please provide a valid ammount')
+      }else{
+          // diposit display 
+          let dipositDisplay = document.getElementById('diposit-display');
+          let dipositDisplayAmmount = parseFloat(dipositDisplay.innerText);
+          // disposit input 
+          let diposiInput = document.getElementById('diposit-input');
+          let dipositInputAmmount = parseFloat(diposiInput.value);
+          // total balane 
+          let totalBanlaneDisplay = document.getElementById('total-balance');
+          let totalBalanceConvet = parseFloat(totalBanlaneDisplay.innerText);
+          // diposit mathmatical operation 
+          let diposit = dipositDisplayAmmount + dipositInputAmmount;
+          dipositDisplay.innerText = diposit;
+          // total ammount mathmatic operation 
+          let totalBalance = totalBalanceConvet + dipositInputAmmount;
+          totalBanlaneDisplay.innerText = totalBalance;
+          // reset diposit input feild 
+          diposiInput.value = ''
+      }
     })
     // =============withdrow related javaScript ============
     document.getElementById('withdraw-btn').addEventListener('click', function (){
-      // withdrow display
-      let withdrawDisplay = document.getElementById('withdrow-display');
-      let withdrawDisplayAmmount = parseFloat(withdrawDisplay.innerText)
-      // withdrow input 
+      let forAlrtWithdrow = document.getElementById('withdrow-input');
+      // 
       let withdrawInput = document.getElementById('withdrow-input');
       let withdrawInputAmmount = parseFloat(withdrawInput.value)
-      // math 
-      let totalWithdrow = withdrawDisplayAmmount + withdrawInputAmmount;
-      withdrawDisplay.innerText = totalWithdrow;
-      // total balance
+      // 
       let total = document.getElementById('total-balance');
       let totalNumber = parseFloat(total.innerText);
-      let minus = totalNumber - withdrawInputAmmount;
-      total.innerText = minus;
+      //
+      if (forAlrtWithdrow.value === '') {
+        alert('please provide a valid ammount')
+      }
+      else if (withdrawInputAmmount > totalNumber){
+         alert('invalid balance')
+      }else{
+        // withdrow display
+         let withdrawDisplay = document.getElementById('withdrow-display');
+          let withdrawDisplayAmmount = parseFloat(withdrawDisplay.innerText)
+          // withdrow input 
+          let withdrawInput = document.getElementById('withdrow-input');
+          let withdrawInputAmmount = parseFloat(withdrawInput.value)
+          // math 
+          let totalWithdrow = withdrawDisplayAmmount + withdrawInputAmmount;
+          withdrawDisplay.innerText = totalWithdrow;
+          // total balance
+          let total = document.getElementById('total-balance');
+          let totalNumber = parseFloat(total.innerText);
+          let minus = totalNumber - withdrawInputAmmount;
+          total.innerText = minus;
+      }
     })
   </script>
 </body>
