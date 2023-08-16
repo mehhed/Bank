@@ -130,7 +130,7 @@
     // ======== deposit related javaScript 
     document.getElementById('diposit-btn').addEventListener('click', function(){
       let forAlrtDeposit = document.getElementById('diposit-input');
-      if (forAlrtDeposit.value === '' || typeof forAlrtDeposit.value === 'string') {
+      if (forAlrtDeposit.value === '') {
         alert('please provide a valid ammount')
       }else{
           // diposit display 
@@ -162,7 +162,7 @@
       let total = document.getElementById('total-balance');
       let totalNumber = parseFloat(total.innerText);
       //
-      if (forAlrtWithdrow.value === '' || typeof forAlrtWithdrow.value === 'string') {
+      if (forAlrtWithdrow.value === '') {
         alert('please provide a valid ammount')
       }
       else if (withdrawInputAmmount > totalNumber){
